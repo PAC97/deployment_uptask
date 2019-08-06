@@ -1,0 +1,14 @@
+extends layout
+
+include mixins/crearProyecto
+
+block Contenido
+    .row
+
+        .col-md-12.caja-login.mt-3
+            h1.text-center #{nombrePagina}
+
+            if errores
+                each error in errores
+                    .alert.alert-danger(role='alert')= error.texto
+            +crearProyecto(proyecto)

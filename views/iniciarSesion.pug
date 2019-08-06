@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include partials/header
+    body.container
+        div(class="row ")
+            div(class="col-md-2")
+            div(class="col-md-8")
+                    if locals.mensajes
+                        
+                        each categoria in Object.keys(locals.mensajes)
+                            each error in mensajes[categoria]
+                                .alert.alert-dismissible.fade.show.mt-2(class=`${categoria}` role='alert')
+                                    p= error
+                    form#formulario(method="POST" action="/iniciar-sesion" class="caja-login mt-5")
+                        h1.text-center Iniciar Sesion en UpTask
+                        div(class="form-group")
+                            label(for="email") E-mail:
+                            input(type="email" name="email" placeholder="Tu email" value=email class="form-control")
+                            label(for="password") Password:
+                            input(type="password" name="password" placeholder="Password" value=password class="form-control")
+                            input.boton(type="submit", value="Iniciar Sesion" class="btn btn-primary mt-2")
+                            div(class="col mt-2 mb-2")
+                                a(href="/crear-cuenta")
+                                    strong ¿Aún no tienes cuenta? Crea una gratis
+                            div(class="col mt-2")
+                                a(href="/reestablecer")
+                                    strong ¿Olvidaste tu contraseña?
+            div(class="col-md-2")
+        script(src='https://code.jquery.com/jquery-3.4.1.min.js', integrity='sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=', crossorigin='anonymous')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js")
+
+

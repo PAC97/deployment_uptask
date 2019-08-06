@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+       include partials/header
+       
+    body.container
+        div(class="row ")
+            div(class="col-md-2")
+            div(class="col-md-8 mt-5")
+                if locals.mensajes
+                        
+                        each categoria in Object.keys(locals.mensajes)
+                            each error in mensajes[categoria]
+                                .alert.alert-danger.alert-dismissible.fade.show.mt-2(class=`${categoria}` role='alert')
+                                    p= error
+                h1.text-center= nombrePagina
+                p.text-center Agrega tu e-mail para reestablecer la contraseña
+                form.caja-login(method="POST" action="/reestablecer")
+                    div(class="form-group")
+                        label(for="email") E-mail:
+                        input(type="email" name="email" placeholder="Tu email" value=email class="form-control")
+                    input.btn.btn-primary(type="submit", value="Reestablecer Password")
+                    .mt-2
+                        a(href="/iniciar-sesion")
+                            strong Ya lo recordé, volver al Login

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include partials/header
+    body.container
+        div(class="row ")
+            div(class="col-md-2")
+            div(class="col-md-8")
+                    if locals.mensajes
+                        
+                        each categoria in Object.keys(locals.mensajes)
+                            each error in mensajes[categoria]
+                                .alert.alert-dismissible.fade.show.mt-2(class=`${categoria}` role='alert')
+                                    p= error
+                    form#formulario(method="POST" action="/crear-cuenta" class="caja-login mt-5")
+                        h1.text-center Crear Cuenta en UpTask
+                        div(class="form-group")
+                            label(for="nombre") Nombre:
+                            input(type="text" name="nombre" placeholder="Nombre" value=nombre class="form-control")
+                            label(for="apellido") Apellido:
+                            input(type="text" name="apellido" placeholder="Apellido" value=apellido class="form-control")
+                            label(for="email") E-mail:
+                            input(type="email" name="email" placeholder="Tu email" value=email class="form-control")
+                            label(for="password") Password:
+                            input(type="password" name="password" placeholder="Password" value=password class="form-control")
+                            input.boton(type="submit", value="Crear Cuenta" class="btn btn-primary mt-2")
+                            div(class="col mt-2")
+                                a(href="/iniciar-sesion")
+                                    strong Volver a iniciar sesion
+            div(class="col-md-2")
