@@ -6,13 +6,14 @@ html(lang="en")
             if(window.history.forward(1) != null) window.history.forward(1);
 
     body
-        nav.navbar.navbar-light.bg-light
+        
+        nav.navbar.navbar-light.bg-light.borde
             a(href='/')
-                h1 UpTask - Administrador de proyectos
+                h1.colorH1 UpTask - Administrador de proyectos
             a.navbar-brand(href='/cerrar-sesion' class='btn btn-danger text-light') Cerrar Sesion
         #wrapper.d-flex
             // Sidebar
-            #sidebar-wrapper.bg-light.border-right
+            #sidebar-wrapper.bg-light.border-right.mt-2.borde
                 .list-group.list-group-flush
                 h2.text-justify= locals.usuario.nombre+" "+locals.usuario.apellido
                 a.list-group(href='/nuevoProyecto' class='btn btn-outline-primary ') Nuevo Proyecto
@@ -21,7 +22,7 @@ html(lang="en")
                     if(proyectos.length)
                         each proyecto in proyectos
                             li(class="list-group")
-                                a(href=`/proyectos/${proyecto.url}` class='h4 btn btn-outline-primary')= proyecto.nombre
+                                a(href=`/proyectos/${proyecto.url}` class='h4 btn btn-primary')= proyecto.nombre
             // /#sidebar-wrapper
             
             .container-fluid

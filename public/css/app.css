@@ -1,5 +1,5 @@
 body{
-    background-color: #1c3144;
+    background-color: #325D88;
 }
 
 .blanco{
@@ -37,6 +37,7 @@ a:link {
     color: black;
     font-size: 25px;
     transition: background-color .5s ease-in-out;
+    border-radius: 10px;
 }
 
 /** Listado Pendientes **/
@@ -47,6 +48,7 @@ a:link {
     margin: 2rem auto 0 auto;
     padding: 2rem;
     border: 1px solid rgb(0, 0, 0);
+    border-radius: 10px;
 }
 .listado-pendientes ul {
     padding: 0;
@@ -72,6 +74,7 @@ a:link {
     max-width: 800px;
     width: 90%;
     margin: 0 auto;
+    border-radius: 5px;
 }
 .porcentaje {
     width: 0%;
@@ -110,10 +113,17 @@ a:link {
     color: black
 }
 
-.borde{
-    border: 1px solid black;
+.linea{
+    border: solid 1px #000000;
+    border-radius: 5px;
 }
 
 label{
     color: black
+}
+.borde{
+    border-radius: 5px;
+}
+.colorH1{
+    color: black;
 }

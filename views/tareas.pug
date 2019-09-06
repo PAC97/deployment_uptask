@@ -8,7 +8,7 @@ block Contenido
         form.agregar-tarea.form-group(action=`/proyectos/${proyecto.url}` method="POST")
             .campo
                 label(for="tarea") Tarea:
-                input.nombre-tarea(type="text" name="tarea" placeholder="Nombre Tarea" class="form-control borde")
+                input.nombre-tarea(type="text" name="tarea" placeholder="Nombre Tarea" class="form-control linea" required)
             .campo-enviar
                 input.boton.nueva-tarea(type="submit" value="Agregar" class="btn btn-primary mt-2")
 
@@ -16,6 +16,7 @@ block Contenido
             ul
               if tareas.length
                 each tarea in tareas
+                    a
                     li.tarea(data-tarea=tarea.id)
                         p=tarea.tarea
                         .acciones
