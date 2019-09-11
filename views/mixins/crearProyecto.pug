@@ -5,5 +5,9 @@ mixin crearProyecto(proyecto = {})
             input(value=proyecto.nombre type="text" id="nombre" name="nombre" placeholder="Nombre Proyecto" class="form-control borde")
             label(for="descripcion") Descipción Proyecto
             textarea(id="descripcion" name="descripcion" placeholder="Descripción" class="form-control" rows="5" cols="25" class="borde")= proyecto.descripcion
-        .campo.enviar
-            input(type="submit" value=`${proyecto.nombre ? 'Guardar' : 'Agregar'}` class="btn btn-primary")
+        .agregar-tarea.mt-2
+            .row
+                .col-6
+                    input(type="submit" value=`${proyecto.nombre ? 'Guardar' : 'Agregar'}` class="btn btn-primary")
+                .col-6
+                    a(href=`/proyectos/${proyecto.url}` class="btn btn-danger mr-3") Cancelar

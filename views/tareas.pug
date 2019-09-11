@@ -36,11 +36,8 @@ block Contenido
         //Acciones a realizar
 
         .agregar-tarea.mt-2
-            
-            .row 
+            .row
                 .col-6
                     a(href=`/proyecto/editar/${proyecto.id}` class="btn btn-primary") Editar
-                
                 .col-6
                     button#eliminar-proyecto(type="button" data-proyecto-url=proyecto.url class="btn btn-danger") Eliminar
-                

@@ -8,10 +8,10 @@ const enviarEmail = require('../handlers/email')
 
 exports.autenticarUsuario = passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/iniciar-sesion',
-    failureFlash: true,
-    badRequestMessage: 'Ambos campos son obligatorios'
-});
+    failureRedirect: '/iniciar-sesion'
+}), function(req, res){
+    req.flash('alert-danger', 'badRequestMessage')
+};
 
 //Funcion para verificar si el usuario esta autenticado o no
 exports.usuarioAutenticado = (req, res, next) =>{

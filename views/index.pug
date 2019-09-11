@@ -6,10 +6,10 @@ block Contenido
                     .row
                         each proyecto in proyectos
                             .col-md-3.d-flex.mt-5
-                                
+
                                 .card(style='width: 18rem;')
                                     .card-body
                                         h5.card-title= proyecto.nombre
                                         p.card-text= proyecto.descripcion
                                         a.btn.btn-primary(href=`/proyectos/${proyecto.url}`) Ver
-                                        
+

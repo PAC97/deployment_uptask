@@ -7,7 +7,6 @@ html(lang="en")
             div(class="col-md-2")
             div(class="col-md-8")
                     if locals.mensajes
-                        
                         each categoria in Object.keys(locals.mensajes)
                             each error in mensajes[categoria]
                                 .alert.alert-dismissible.fade.show.mt-2(class=`${categoria}` role='alert')
