@@ -1,4 +1,4 @@
-const Usuarios = require('../models/usuarios');
+const Usuarios = require('../models/Usuarios');
 const enviarEmail = require('../handlers/email');
 exports.formCrearCuenta = (req, res) =>{
     res.render('crearCuenta', {
